@@ -1,0 +1,24 @@
+<div class="row">
+	<div class="small-8 columns">
+		{{input type="text" value=newTodoTitle action="createTodo" placeholder="New Todo"}}
+	</div>
+</div>
+
+<div class="row">
+	<div class="small-12 columns">
+		<ul>
+			{{#each todo in model.todos itemController="todo"}}
+				<li>
+					{{input type ="checkbox" checked=todo.isCompleted}}
+					{{#if todo.isEditing}}
+						{{edit-title type="text" value=todo.model.title focus-out="updateTitle" insert-newline="updateTitle"}}
+					{{else}}
+						{{todo.model.title}}
+						<a href="#" {{action "editTitle"}}>{{fa-icon "edit"}}</a>
+						<a href="#" {{action "deleteTodo" todo.model.id}}>{{fa-icon "trash"}}</a>
+					{{/if}}
+				</li>
+			{{/each}}
+		</ul>
+	</div>
+</div>

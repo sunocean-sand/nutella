@@ -1,0 +1,24 @@
+<div class="row">
+	<div class="small-12 columns">
+		{{#if isEditing}}
+			{{edit-title type="text" value=model.title focus-out="updateTitle" insert-newline="updateTitle"}}
+		{{else}}
+			<h4>{{model.title}}</h4>
+		{{/if}}
+	</div>
+</div>
+
+
+<div class="row">
+	<div class="small-12 columns">
+		<a href="#" {{action "editTitle"}}>Edit {{fa-icon "edit"}}</a>
+		<a href="#" {{action "deleteList"}}>Delete {{fa-icon "trash"}}</a>
+	</div>
+</div>
+
+
+<div class="row">
+	<div class="small-12 columns">
+		{{outlet "todos"}}
+	</div>
+</div>
