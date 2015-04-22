@@ -12,6 +12,6 @@ export default Ember.Controller.extend({
 			this.set('isEditing', false);
 
 			return true;
-		}
+		},
 	}
 });
