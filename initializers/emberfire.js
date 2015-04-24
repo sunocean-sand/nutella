@@ -19,7 +19,7 @@ var session = Ember.Object.extend({
 	}.on("init"),
 
 	login: function() {
-		return new Ember.RSVP.Promise(function(resolve, reject) {
+		return new Ember.RSVP.Promise((resolve, reject) => {
 			this.get("ref").authWithOAuthPopup("facebook", function(error, user) {
 				if (user) {
 					resolve(user);
