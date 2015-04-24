@@ -18,13 +18,18 @@ var session = Ember.Object.extend({
 	}.on("init"),
 
 	login: function() {
-		return new RSVP.Promise(function(resolve, reject) {
+		return new Promise(function(resolve, reject) {
 			this.get("ref").authWithOAuthPopup("facebook", function(error, user) {
 				if (user) {
 					resolve(user);
 				} else {
 					reject(error);
 				}
+			},
+
+			{
+				remember: "sessionOnly",
+				scope: "email"
 			});
 		});
 	},
