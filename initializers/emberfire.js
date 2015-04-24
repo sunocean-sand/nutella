@@ -1,5 +1,6 @@
 
 import Ember from 'ember';
+import Firebase from 'firebase';
 
 
 var session = Ember.Object.extend({
@@ -18,7 +19,7 @@ var session = Ember.Object.extend({
 	}.on("init"),
 
 	login: function() {
-		return new Promise(function(resolve, reject) {
+		return new Ember.RSVP.Promise(function(resolve, reject) {
 			this.get("ref").authWithOAuthPopup("facebook", function(error, user) {
 				if (user) {
 					resolve(user);
