@@ -12,7 +12,7 @@
 {{#if session.isAuthenticated}}
   <div class="collapse navbar-collapse">
     <ul class="nav navbar-nav">
-      <li> {{#link-to "dashboard"}} All {{/link-to}} </li>
+      <li> {{#link-to "lists"}} All {{/link-to}} </li>
     </ul>
 
     <p class="navbar-text navbar-right avatar"><img src={{session.currentUser.facebook.cachedUserProfile.avatar_url}} class="img-circle" /></p>

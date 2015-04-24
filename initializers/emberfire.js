@@ -1,12 +1,13 @@
 
 import Ember from 'ember';
 
+
 var session = Ember.Object.extend({
 	ref : new Firebase("https://nutella.firebaseio.com"),
 
 	addFirebaseCallback: function() {
 		var session = this;
-		
+
 		this.get("ref").onAuth(function(authData) {
 			if (authData) {
 				session.set("isAuthenticated", true);
@@ -17,8 +18,8 @@ var session = Ember.Object.extend({
 	}.on("init"),
 
 	login: function() {
-		return new Promise(function(resolve, reject) {
-			this.get("ref").authWithOAuthPopup("facebook", function(error, user){
+		return new RSVP.Promise(function(resolve, reject) {
+			this.get("ref").authWithOAuthPopup("facebook", function(error, user) {
 				if (user) {
 					resolve(user);
 				} else {
@@ -43,3 +44,15 @@ export default {
 		app.inject("route", "session", "session:main");
 	}
 };
+
+
+/*
+var ref = new Firebase("https://nutella.firebaseio.com");
+	ref.authWithOAuthPopup("facebook", function(error, authData) {
+	  if (error) {
+	    console.log("Login Failed!", error);
+	  } else {
+	    console.log("Authenticated successfully with payload:", authData);
+	  }
+});
+*/
