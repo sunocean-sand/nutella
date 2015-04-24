@@ -2,11 +2,11 @@
 import Ember from 'ember';
 
 var session = Ember.Object.extend({
-	ref: new Firebase("https://nutella.firebaseio.com/"),
+	ref : new Firebase("https://nutella.firebaseio.com"),
 
 	addFirebaseCallback: function() {
 		var session = this;
-
+		
 		this.get("ref").onAuth(function(authData) {
 			if (authData) {
 				session.set("isAuthenticated", true);
@@ -40,6 +40,6 @@ export default {
 	initialize: function (container, app) {
 		app.register("session:main", session);
 		app.inject("controller", "session", "session:main");
-		app.inject("route", "auth", "session:main");
+		app.inject("route", "session", "session:main");
 	}
 };

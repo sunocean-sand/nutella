@@ -1,5 +1,8 @@
 
 import Ember from 'ember';
+import Firebase from 'firebase';
+
+var ref = new Firebase("https://nutella.firebaseio.com");
 
 export default Ember.Controller.extend({
 	actions: {
