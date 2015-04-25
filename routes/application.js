@@ -6,6 +6,12 @@ var ref = new Firebase("https://nutella.firebaseio.com");
 
 export default Ember.Route.extend({
 	actions: {
+
+		login: function() {
+			var controller = this;
+			controller.get("session").login();
+		},
+
 		loginFacebook: function() {
 			var controller = this;
 				controller.get("session").loginFacebook().then(function(user) {
