@@ -2,21 +2,22 @@
 	<h2 id="title">HandStack</h2>
 </div>
 
-<p class="lead button">  
-  <button {{action "login"}} class="btn btn-default">
+  <button {{action "loginFacebook"}} class="btn btn-default">
     {{fa-icon "facebook"}}
       Sign in with Facebook
   </button>
-</p>
+
+  <button {{action "loginTwitter"}} class="btn btn-default">
+    {{fa-icon "twitter"}}
+      Sign in with Twitter
+  </button>
 
 {{#if session.isAuthenticated}}
-  <div class="collapse navbar-collapse">
-    <ul class="nav navbar-nav">
-      <li> {{#link-to "lists"}} All {{/link-to}} </li>
-    </ul>
-
-    <p class="navbar-text navbar-right avatar"><img src={{session.currentUser.facebook.cachedUserProfile.avatar_url}} class="img-circle" /></p>
-  </div>
+    <li {{action 'logout'}}><a>logout</a></li>
+    
+    <p class="navbar-text navbar-right avatar"><img src={{session.currentUser.facebook.cachedUserProfile.picture}} class="img-circle" /></p>
+    <img src="https://graph.facebook.com/{facebookId}/picture?type=normal">
+    
 {{/if}}
 
 

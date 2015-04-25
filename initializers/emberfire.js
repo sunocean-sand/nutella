@@ -18,7 +18,7 @@ var session = Ember.Object.extend({
 		});
 	}.on("init"),
 
-	login: function() {
+	loginFacebook: function() {
 		return new Ember.RSVP.Promise((resolve, reject) => {
 			this.get("ref").authWithOAuthPopup("facebook", function(error, user) {
 				if (user) {
@@ -34,6 +34,40 @@ var session = Ember.Object.extend({
 			});
 		});
 	},
+
+	loginTwitter: function() {
+			var session = this;
+			return new Ember.RSVP.Promise(function(resolve, reject) {
+				session.get('ref').authWithOAuthPopup('twitter', function(error, user) {
+					if (user) { resolve(user); }
+					else { reject(error); }
+				});
+			});
+	},
+
+/*
+	createUser: function() {
+		var session = this;
+		return new Ember.RSVP.Promise(function(resolve, reject) {
+			session.get('ref').createUser({
+				email: "",
+				password: ""
+			},	function (error, user) {
+
+				if (user) {
+					resolve(user);
+				} else {
+					reject(error);
+				}
+			}); 
+		});
+	},
+*/
+
+	logout: function() {
+		this.get("ref").unauth();
+	},
+
 
 	currentUser: function() {
 		return this.get("ref").getAuth();
