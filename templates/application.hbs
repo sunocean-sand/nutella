@@ -8,6 +8,13 @@
      
       <ul class="nav navbar-nav navbar-left">
         <li><a {{action 'openModal' 'modal'}}>{{fa-icon "user"}}</a></li>
+
+        {{#if session.isAuthenticated}}
+          <li {{action 'logout'}}><a>logout</a></li>
+          
+          <p class="navbar-text navbar-right avatar"><img src={{session.currentUser.facebook.cachedUserProfile.picture}} class="img-circle" /></p>
+
+        {{/if}}
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
@@ -15,22 +22,13 @@
 
       </div>
 
+
   </div>
 </nav>
 
 
 {{outlet "modal"}}
 
-
-
-
-{{#if session.isAuthenticated}}
-    <li {{action 'logout'}}><a>logout</a></li>
-    
-    <p class="navbar-text navbar-right avatar"><img src={{session.currentUser.facebook.cachedUserProfile.picture}} class="img-circle" /></p>
-    <img src="https://graph.facebook.com/{facebookId}/picture?type=normal">
-
-{{/if}}
 
 
 {{outlet}}
