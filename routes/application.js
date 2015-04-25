@@ -32,7 +32,17 @@ export default Ember.Route.extend({
 
 
 		logout: function() {
-			this.get('session').logout();
+			var controller = this;
+			controller.get('session').logout();
+		},
+
+		createUser: function() {
+			var controller = this;
+			controller.get('session').createUser().then(function(user) {
+
+				}, function() {
+
+				});
 		},
 
 		openModal: function(modal) {

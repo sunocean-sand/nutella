@@ -57,8 +57,8 @@ var session = Ember.Object.extend({
 				});
 			});
 	},
+	
 
-/*
 	createUser: function() {
 		var session = this;
 		return new Ember.RSVP.Promise(function(resolve, reject) {
@@ -75,7 +75,7 @@ var session = Ember.Object.extend({
 			}); 
 		});
 	},
-*/
+
 
 	logout: function() {
 		this.get("ref").unauth();
