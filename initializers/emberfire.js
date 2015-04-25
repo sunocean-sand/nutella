@@ -45,6 +45,19 @@ var session = Ember.Object.extend({
 			});
 	},
 
+	login: function() {
+			var session = this;
+			return new Ember.RSVP.Promise(function(resolve, reject) {
+				session.get('ref').authWithPassword({
+					email: "",
+					password: ""
+				}, function(error, user) {
+					if (user) { resolve(user); }
+					else { reject(error); }
+				});
+			});
+	},
+
 /*
 	createUser: function() {
 		var session = this;
