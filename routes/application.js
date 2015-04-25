@@ -33,6 +33,21 @@ export default Ember.Route.extend({
 
 		logout: function() {
 			this.get('session').logout();
-		}
+		},
+
+		openModal: function(modalName) {
+	      return this.render(modalName, {
+	        into: 'application',
+	        outlet: 'modal'
+	      });
+	    },
+
+		closeModal: function() {
+		    return this.disconnectOutlet({
+		      outlet: 'modal',
+		      parentView: 'application'
+		    });
+		},
+
 	}
 });
