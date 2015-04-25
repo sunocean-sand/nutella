@@ -27,6 +27,10 @@ li {
   padding: 1em;
 }
 
+.modal-header {
+   border-bottom:0px;
+}
+
 .overlay {
   height: 100%;
   width: 100%;
@@ -38,4 +42,15 @@ li {
 
 .flush--top {
   margin-top: 0;  
+}
+
+.nav-tabs > li, .nav-pills > li {
+    float:none;
+    display:inline-block;
+    *display:inline; /* ie7 fix */
+     zoom:1; /* hasLayout ie7 trigger */
+}
+
+.nav-tabs {
+    text-align:center;
 }
