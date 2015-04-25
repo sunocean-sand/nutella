@@ -35,19 +35,23 @@ export default Ember.Route.extend({
 			this.get('session').logout();
 		},
 
-		openModal: function(modalName) {
-	      return this.render(modalName, {
+		openModal: function(modal) {
+	      this.render(modal, {
 	        into: 'application',
 	        outlet: 'modal'
+	      });
+	      return Ember.run.schedule('afterRender', function() {
+	        Ember.$('.modal').modal('show');
 	      });
 	    },
 
 		closeModal: function() {
-		    return this.disconnectOutlet({
-		      outlet: 'modal',
-		      parentView: 'application'
-		    });
-		},
+	      Ember.$('.modal').modal('hide');
+	      return this.disconnectOutlet({
+	        outlet: 'modal',
+	        parentView: 'application'
+	      });
+	    },
 
 	}
 });
