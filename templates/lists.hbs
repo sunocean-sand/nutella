@@ -13,15 +13,15 @@
 			<div class="small-12">
 				<ul>
 					{{#each list in model}}
-						<li>{{#link-to "lists.show" list}}{{list.title}}{{/link-to}}</li>
+						<li>{{#link-to "todo" list}}{{list.title}}{{/link-to}}</li>
 					{{/each}}
 				</ul>
 			</div>
 		</div>
 	</div>
 
-	<div class="small-6 columns">
+	<!--div class="small-6 columns">
 		{{outlet}}
-	</div>
+	</div-->
 	
 </div>

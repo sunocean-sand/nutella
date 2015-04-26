@@ -14,8 +14,8 @@
 						{{edit-title type="text" value=todo.model.title focus-out="updateTitle" insert-newline="updateTitle"}}
 					{{else}}
 						{{todo.model.title}}
-						<a href="#" {{action "editTitle"}}>{{fa-icon "edit"}}</a>
-						<a href="#" {{action "deleteTodo" todo.model.id}}>{{fa-icon "trash"}}</a>
+						<a href="#" {{action "editTitle"}}>{{fa-icon "pencil"}}</a>
+						<a href="#" {{action "deleteTodo" todo.model.id}}>{{fa-icon "remove"}}</a>
 					{{/if}}
 				</li>
 			{{/each}}

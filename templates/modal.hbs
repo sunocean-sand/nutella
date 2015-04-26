@@ -70,7 +70,7 @@
         <p>
         <button {{action "loginFacebook"}} class="btn btn-default">
           {{fa-icon "facebook"}}
-            Sign in with Facebook
+            Sign up with Facebook
         </button>
 
         </p>
@@ -78,7 +78,7 @@
 
         <button {{action "loginTwitter"}} class="btn btn-default">
           {{fa-icon "twitter"}}
-            Sign in with Twitter
+            Sign up with Twitter
         </button>
 
         </p>
@@ -86,9 +86,9 @@
         <form class="form-horizontal">
           <div class="form-group">
             <div class="col-sm-10 col-sm-offset-1">
-              <input type="name" class="form-control" id="inputName3" placeholder="Your Name">
-              <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
-              <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+              {{input value=name placeholder="Your Name"}}
+              {{input type="email" value=email placeholder="Email"}}
+              {{input type="password" value=password placeholder="Password"}}
             </div>
           </div>
           <div class="form-group">
