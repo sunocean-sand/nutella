@@ -1,27 +1,38 @@
-<div class="row">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<div class="container-fluid">
 
-	<div class="small-6 columns">
 		<div class="row">
-			<div class="small-5">
+			<div class="col-xs-12 center-block text-center">
 				{{input type="text" value=newListTitle action="createList" placeholder="Create a Stack"}}
 
 				<h4>Discover stacks at work</h4>
 			</div>
 		</div>
 
+
 		<div class="row">
-			<div class="small-12">
-				<ul>
-					{{#each list in model}}
-						<li>{{#link-to "todo" list}}{{list.title}}{{/link-to}}</li>
-					{{/each}}
-				</ul>
-			</div>
-		</div>
+        {{#each list in model}}
+        <div class="col-lg-4 col-sm-4 col-xs-12">
+            
+            {{#link-to "todo" list}}
+            <div class="panel panel-default">
+              <div class="panel-body">
+                  
+                  <li>{{list.title}}</li>
+                  
+              </div>
+            </div>
+            {{/link-to}}
+
+        </div>
+        {{/each}}
+      </div>
+
+
+
+
 	</div>
 
 	<!--div class="small-6 columns">
 		{{outlet}}
 	</div-->
-	
-</div>
