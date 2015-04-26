@@ -1,11 +1,13 @@
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<div class="container-fluid">
+
+
 <div class="row">
-	<div class="small-8 columns">
 		{{input type="text" value=newTodoTitle action="createTodo" placeholder="New Todo"}}
-	</div>
 </div>
 
 <div class="row">
-	<div class="small-12 columns">
+	<!--div class="col-xs-12 col-xs-offset-5"-->
 		<ul>
 			{{#each todo in model.todos itemController="todo"}}
 				<li>
@@ -20,5 +22,8 @@
 				</li>
 			{{/each}}
 		</ul>
-	</div>
+	<!--/div-->
+</div>
+
+
 </div>

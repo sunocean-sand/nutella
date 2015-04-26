@@ -1,26 +1,18 @@
 
 
 <div class="row">
-	<div class="small-12 columns">
+	<div class="col-xs-12 center-block text-center">
 		{{#if isEditing}}
 			{{edit-title type="text" value=model.title focus-out="updateTitle" insert-newline="updateTitle"}}
 		{{else}}
 			<h4>{{model.title}}</h4>
+			<a href="#" {{action "editTitle"}}>{{fa-icon "pencil"}}</a>
+			<a href="#" {{action "deleteList"}}>{{fa-icon "remove"}}</a>
 		{{/if}}
 	</div>
 </div>
 
 
 <div class="row">
-	<div class="small-12 columns">
-		<a href="#" {{action "editTitle"}}>{{fa-icon "pencil"}}</a>
-		<a href="#" {{action "deleteList"}}>{{fa-icon "remove"}}</a>
-	</div>
-</div>
-
-
-<div class="row">
-	<div class="small-12 columns">
 		{{outlet "todos"}}
-	</div>
 </div>
