@@ -7,10 +7,14 @@
 </div>
 
 <div class="row">
-	<!--div class="col-xs-12 col-xs-offset-5"-->
-		<ul>
+	{{!div class="col-xs-12 col-xs-offset-5"}}
+	{{!task list}}
+		<ul class="list-group">
 			{{#each todo in model.todos itemController="todo"}}
-				<li>
+				<li class="list-group-item">
+
+					{{!task}}
+
 					{{input type ="checkbox" checked=todo.isCompleted}}
 					{{#if todo.isEditing}}
 						{{edit-title type="text" value=todo.model.title focus-out="updateTitle" insert-newline="updateTitle"}}
@@ -19,10 +23,16 @@
 						<a href="#" {{action "editTitle"}}>{{fa-icon "pencil"}}</a>
 						<a href="#" {{action "deleteTodo" todo.model.id}}>{{fa-icon "remove"}}</a>
 					{{/if}}
+
+					{{!number of hands}}
+					<p>
+					<span class="badge pull-left">14 hands</span>
+					</p>
+
 				</li>
 			{{/each}}
 		</ul>
-	<!--/div-->
+	{{!/div}}
 </div>
 
 
