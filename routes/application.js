@@ -39,9 +39,7 @@ export default Ember.Route.extend({
 		createUser: function() {
 			var controller = this;
 			controller.get('session').createUser().then(function(user) {
-
 				}, function() {
-
 				});
 		},
 

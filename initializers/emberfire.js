@@ -8,10 +8,16 @@ var session = Ember.Object.extend({
 
 	addFirebaseCallback: function() {
 		var session = this;
+		var isNewUser = true;
 
 		this.get("ref").onAuth(function(authData) {
 			if (authData) {
 				session.set("isAuthenticated", true);
+			} else if (authData && isNewUser) {
+				session.get("ref").child("users").child(authData.uid).set({
+					provider: authData.provider,
+					name: getName(authData)
+				});
 			} else {
 				session.set("isAuthenticated", false);
 			}
@@ -57,24 +63,40 @@ var session = Ember.Object.extend({
 				});
 			});
 	},
-	
+
 
 	createUser: function() {
 		var session = this;
+
 		return new Ember.RSVP.Promise(function(resolve, reject) {
 			session.get('ref').createUser({
-				email: "",
-				password: ""
-			},	function (error, user) {
+						name: "jess",
+						email: "jess@handstack.com",
+						password: "rain",
+			},
 
-				if (user) {
-					resolve(user);
-				} else {
-					reject(error);
-				}
-			}); 
+			function(error, userData) {
+					if (error === null) {
+						resolve(userData.uid);
+						session.set("isNewUser", true);
+						alert("user created");
+					} else {
+						reject(error);
+						alert("Error creating user");
+					}
+				});
 		});
 	},
+	 /*
+	 createUser: function() {
+        var email = "jess@handstack.com";//createEmail.value;
+        var password = "rain";//createPassword.value;
+        this.authClient.createUser(email, password, function(error, user) {
+            if (!error) {
+                console.log('User Id: ' + user.id + ', Email: ' + user.email);
+            }
+        }
+    )},*/
 
 
 	logout: function() {
