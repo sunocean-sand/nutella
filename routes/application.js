@@ -15,32 +15,29 @@ export default Ember.Route.extend({
 		loginFacebook: function() {
 			var controller = this;
 				controller.get("session").loginFacebook().then(function(user) {
-
-				}, function() {
-
+					console.log(user);
 				});
 		},
 
 		loginTwitter: function() {
 			var controller = this;
 				controller.get("session").loginTwitter().then(function(user) {
-
-				}, function() {
-
+					console.log(user);
 				});
 		},
 
 
 		logout: function() {
-			var controller = this;
-			controller.get('session').logout();
+			this.get('session').logout();
 		},
 
 		createUser: function() {
 			var controller = this;
-			controller.get('session').createUser().then(function(user) {
+			controller.get('session').createUser();
+			alert(this.get('name'));
+			/*.then(function(user) {
 				}, function() {
-				});
+				});*/
 		},
 
 		openModal: function(modal) {
