@@ -4,5 +4,6 @@ export default DS.Model.extend({
 	title: DS.attr('string'),
 	isCompleted: DS.attr('boolean', {defaultValue: false}),
 
-	list: DS.belongsTo('list', {async: true})
+	list: DS.belongsTo('list', {async: true}),
+	user: DS.belongsTo('user', {async: true})
 });
