@@ -11,6 +11,11 @@ export default Ember.Route.extend({
 			into: 'lists.show',
 			outlet: 'todos',
 		});
+
+	this.render('comments', {
+		into: 'todos',
+		outlet: 'comments'
+	});
   },
 
   actions: {
