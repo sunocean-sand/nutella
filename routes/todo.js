@@ -7,14 +7,10 @@ export default Ember.Route.extend({
   renderTemplate: function(controller) {
     this.render('lists.show', {controller: controller});
 //    this.render('todos', {controller: 'todo'});
+	
 	this.render('todos', {
-			into: 'lists.show',
-			outlet: 'todos',
-		});
-
-	this.render('comments', {
-		into: 'todos',
-		outlet: 'comments'
+		into: 'lists.show',
+		outlet: 'todos',
 	});
   },
 

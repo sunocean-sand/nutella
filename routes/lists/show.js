@@ -7,13 +7,13 @@ export default Ember.Route.extend({
 
 	renderTemplate: function() {
 		this.render('lists/show', { controller: 'lists/show'} );
-/*
+
 		this.render('todos', {
 			into: 'lists/show',
 			outlet: 'todos',
 			controller: 'todo'
 		});
-*/
+
 	},
 
 	isEditing: false,

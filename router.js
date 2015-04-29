@@ -9,5 +9,6 @@ export default Router.map(function() {
   this.resource('lists', {path: '/'}, function() {
     this.route('show', {path: 'lists/:list_id'} );
   });
-  this.route('todo', {path: 'todos/:todo_id'} );
+  this.route('todo', {path: 'todos/:todo_id'});
+  this.route('details', {path: 'todos/:todo_id/details'});
 });

@@ -11,6 +11,9 @@
 	{{!task list}}
 		<ul class="list-group">
 			{{#each todo in model.todos itemController="todo"}}
+
+				{{#link-to "details" todo}}
+
 				<li class="list-group-item">
 
 					{{!task}}
@@ -34,9 +37,12 @@
 
 					
 						{{!speech bubble}}
-						{{outlet "comments"}}
+						{{!outlet "comments"}}
 
 				</li>
+
+				{{/link-to}}
+
 			{{/each}}
 		</ul>
 	{{!/div}}
