@@ -4,10 +4,14 @@
 		<div class="row">
 			<div class="col-xs-12 text-center">
 				
+				{{#if session.isAuthenticated}}
+
 				<h1>Hi {{session.user.displayName}},</h1>
 				<img src={{session.user.imageThumbUrl}} height="100" width="100" class="img-circle">
-				<p class="lead">what do you want to make happen today?</p>
 
+				{{/if}}
+
+				<p class="lead">what do you want to make happen today?</p>
 
 
 				<div class="input-group input-group-lg center-block">
