@@ -4,28 +4,10 @@
 
 		<div class="row center-block text-center">
 
-			<h4>{{title}}</h4>
+			<h4>{{model.title}}</h4>
 
 		</div>
 
-
-		<div class="row">
-			{{#each comment in model.comments}}
-			<li>
-				<p>my name<small>timestamp</small></p>
-				<p class="bubble">yea</p>
-			</li>
-			{{/each}}
-
-
-			<form {{action "createComment" on="submit"}}>
-				<div class="input">
-					<label for="comment">Comment:</label>
-					{{input name="comment" value=comment}}
-				</div>
-			</form>
-		</div>
-
-		{{!outlet "comments"}}
+	{{outlet "comments"}}
 
 	</div>
