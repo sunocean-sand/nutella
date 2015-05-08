@@ -3,12 +3,12 @@
 	<div class="container-fluid">
 
 		<div class="row">
-			{{#each comment in model.comments}}
+			{{!#each comment in model.comments}}
 			<li>
-				<p>my name<small>timestamp</small></p>
+				<p>my name<small>{{timeSince}}</small></p>
 				<p class="bubble">yea</p>
 			</li>
-			{{/each}}
+			{{!/each}}
 
 
 			{{input type="text" value=model.newComment action="createComment" placeholder="say something.."}}
