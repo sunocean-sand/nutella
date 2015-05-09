@@ -89,14 +89,16 @@ fieldset[disabled] .btn-custom.active {
 
 
 
-
+/*
 .bubble 
 {
 position: relative;
 width: 750px;
-height: 110px;
+height: auto;
 padding: 0px;
+margin-top: 20px;
 background: #b3b3b3;
+text-align: center;
 -webkit-border-radius: 0px;
 -moz-border-radius: 0px;
 border-radius: 0px;
@@ -114,4 +116,11 @@ width: 0;
 z-index: 1;
 left: -15px;
 top: 40px;
+}
+*/
+
+.commenterImage {
+    margin-right:5px;
+    height:100%;
+    float:left;
 }

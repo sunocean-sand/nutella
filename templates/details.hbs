@@ -6,8 +6,21 @@
 
 			<h4>{{model.title}}</h4>
 
+			<p>task details</p>
+
+			<p>
+			<span class="badge">14 hands</span>
+			</p>
+
+			<p><img src={{session.user.imageThumbUrl}} height="50" width="50" class="img-circle"></p>
+
+			{{!count me in button}}
+			<button class="btn-pink">count me in</button>
+
 		</div>
 
-	{{outlet "comments"}}
+		<div class="col-sm-6 col-sm-offset-3">
+			{{outlet "comments"}}
+		</div>
 
 	</div>
