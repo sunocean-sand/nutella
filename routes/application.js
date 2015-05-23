@@ -22,6 +22,7 @@ export default Ember.Route.extend({
 				controller.get("session").loginFacebook().then(function(user) {
 					console.log(user);
 				});
+			this.send('closeModal');
 		},
 
 		loginTwitter: function() {
@@ -29,6 +30,7 @@ export default Ember.Route.extend({
 				controller.get("session").loginTwitter().then(function(user) {
 					console.log(user);
 				});
+			this.send('closeModal');
 		},
 
 
