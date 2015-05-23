@@ -1,10 +1,17 @@
-<nav class="navbar navbar-inverse navbar-static-top">
+<div class="navbar-wrapper">
   <div class="container-fluid">
-      <a class="navbar-brand" href="#">HandStack
-        <!--img alt="Brand" src="..."-->
+    <nav class="navbar navbar navbar-static-top">
+
+      <a class="navbar-brand" href="#">
+        <span><img alt="Brand" style="max-width:50px" src="assets/images/logo.png"></span>
+        handstack
       </a>
      
       <ul class="nav navbar-nav navbar-left">
+
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
         <li><a {{action 'openModal' 'modal'}}>{{fa-icon "user"}}</a></li>
 
         {{#if session.isAuthenticated}}
@@ -13,13 +20,12 @@
 
         {{/if}}
       </ul>
-
-      <ul class="nav navbar-nav navbar-right">
-          
-      </ul>
-
+    
+    </nav>
   </div>
-</nav>
+</div>
+
+
 
 
 {{outlet "modal"}}
