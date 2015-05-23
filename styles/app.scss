@@ -64,25 +64,28 @@ input{
   background-color: #FF3399;
   border-color: #FF3399;
 }
-.btn-custom:hover,
-.btn-custom:focus,
-.btn-custom:active,
-.btn-custom.active {
+.btn-pink:hover {
+  background-color: #3bf7c8;
+  border-color: #3bf7c8;
+}
+.btn-pink:focus,
+.btn-pink:active,
+.btn-pink.active {
   background-color: #ff1a8c;
   border-color: #ff0080;
 }
-.btn-custom.disabled:hover,
-.btn-custom.disabled:focus,
-.btn-custom.disabled:active,
-.btn-custom.disabled.active,
-.btn-custom[disabled]:hover,
-.btn-custom[disabled]:focus,
-.btn-custom[disabled]:active,
-.btn-custom[disabled].active,
-fieldset[disabled] .btn-custom:hover,
-fieldset[disabled] .btn-custom:focus,
-fieldset[disabled] .btn-custom:active,
-fieldset[disabled] .btn-custom.active {
+.btn-pink.disabled:hover,
+.btn-pink.disabled:focus,
+.btn-pink.disabled:active,
+.btn-pink.disabled.active,
+.btn-pink[disabled]:hover,
+.btn-pink[disabled]:focus,
+.btn-pink[disabled]:active,
+.btn-pink[disabled].active,
+fieldset[disabled] .btn-pink:hover,
+fieldset[disabled] .btn-pink:focus,
+fieldset[disabled] .btn-pink:active,
+fieldset[disabled] .btn-pink.active {
   background-color: #FF3399;
   border-color: #FF3399;
 }
