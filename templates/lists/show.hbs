@@ -1,48 +1,58 @@
-<div class="row">
-	<div class="pull-right">
-	{{fa-icon "coffee"}}
-	</div>
-</div>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<div class="container-fluid">
+
+
+
+		<div class="row">
+			<div class="pull-right">
+			{{fa-icon "coffee"}}
+			</div>
+		</div>
 
 
 
 
-<div class="row">
+		<div class="row">
 
 
-	<div class="col-xs-12 center-block text-center">
-		{{#if isEditing}}
-			{{edit-title type="text" value=model.title focus-out="updateTitle" insert-newline="updateTitle"}}
-		{{else}}
-			<h4>{{model.title}}</h4>
-			<a href="#" {{action "editTitle"}}>{{fa-icon "pencil"}}</a>
-			<a href="#" {{action "deleteList"}}>{{fa-icon "remove"}}</a>
-		{{/if}}
-	</div>
+			<div class="col-xs-12 center-block text-center">
+				{{#if isEditing}}
+					{{edit-title type="text" value=model.title focus-out="updateTitle" insert-newline="updateTitle"}}
+				{{else}}
+					<h4>{{model.title}}</h4>
+					<a href="#" {{action "editTitle"}}>{{fa-icon "pencil"}}</a>
+					<a href="#" {{action "deleteList"}}>{{fa-icon "remove"}}</a>
+				{{/if}}
+			</div>
 
 
 
-	<div class="col-xs-12 text-center">
+			<div class="col-xs-12 text-center">
 
-		<ul class="url">
-			<small>handstack.com/todos/custom-url</small>
-		</ul>
+				<ul class="url">
+					<small>handstack.com/todos/custom-url</small>
+				</ul>
 
-		<img src={{session.user.imageThumbUrl}} height="50" width="50" class="img-circle">
+				<img src={{session.user.imageThumbUrl}} height="50" width="50" class="img-circle">
 
-		<span class="badge">14 hands</span>
+				<span class="badge">14 hands</span>
 
-	</div>
-
-
-</div>
+			</div>
 
 
-<br><br>
+		</div>
 
 
-<div class="row">
-	<div class="col-xs-10 col-xs-offset-1">
-		{{outlet "todos"}}
-	</div>
+		<br><br>
+
+
+		<div class="row">
+			<div class="col-xs-10 col-xs-offset-1">
+				{{outlet "todos"}}
+			</div>
+		</div>
+
+
+
+
 </div>
