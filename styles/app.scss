@@ -16,6 +16,19 @@ li {
    border-color: transparent;
 }
 
+.navbar .nav > li > a {
+  color:  #fff;
+}
+.navbar .nav > li > a:hover {
+  color:  #FF3399;
+}
+.navbar-brand {
+  color: #fff;
+}
+.navbar-brand:hover {
+  color: #FF3399;
+}
+
 .navbar li { color: #000 }
 
 .navbar-wrapper {
@@ -30,11 +43,17 @@ li {
   color:#fff;
   position:absolute;
   z-index:12;
-  top:50%;
+  top:30%;
   left:0;
   width:100%;
   text-align:center;
 }
+
+.overlaytext > h1 { 
+  color:#fff;
+}
+
+
 
 
 /* CUSTOMIZE THE CAROUSEL
@@ -63,16 +82,8 @@ li {
 
 
 
-/*
-.navbar-brand {
-    position: absolute;
-    width: 100%;
-    left: 0;
-    top: 0;
-    text-align: center;
-    margin: auto;
-}
-*/
+
+
 
 .modal {
   position: relative;

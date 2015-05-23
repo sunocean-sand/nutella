@@ -16,6 +16,12 @@
 
         {{#if session.isAuthenticated}}
 
+        
+          <li><a>{{session.user.displayName}}</a>
+          <span><img src={{session.user.imageThumbUrl}} height="40" width="40" class="img-circle"></span>
+          </li>
+        
+
           <li {{action 'logout'}}><a>logout</a></li>
 
         {{/if}}

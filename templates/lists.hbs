@@ -2,11 +2,11 @@
 <!-- Carousel
 ================================================== -->
 <div class="overlaytext">
-	<h1>Organize Thousands. Fast.</h1>
+	<h1><strong>BUILD COMMUNITY</strong></h1>
 
 		<p class="lead">what do you want to make happen today?</p>
 
-		<div class="col-xs-6 col-xs-offset-3">
+		<div class="col-xs-4 col-xs-offset-4">
 			<div class="input-group input-group-lg center-block">
 			{{input class="form-control" type="text" value=newListTitle action="createList" placeholder="Create a Stack"}}
 			</div>
@@ -34,27 +34,10 @@
 		<div class="row">
 			<div class="col-xs-12 text-center">
 
-				
-				{{#if session.isAuthenticated}}
-
-				<h1>Hi {{session.user.displayName}},</h1>
-				<img src={{session.user.imageThumbUrl}} height="100" width="100" class="img-circle">
-
-				{{/if}}
-
-				<p class="lead">what do you want to make happen today?</p>
-
-				<div class="col-xs-6 col-xs-offset-3">
-					<div class="input-group input-group-lg center-block">
-					{{input class="form-control" type="text" value=newListTitle action="createList" placeholder="Create a Stack"}}
-					</div>
-				</div>
-
-				
-				<br><br><br><br>
-
-
 				<h4>Discover stacks in the works</h4>
+
+				<br><br>
+
 			</div>
 		</div>
 
