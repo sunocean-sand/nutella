@@ -17,7 +17,7 @@ export default Ember.Route.extend({
 		});
   	},
 
-  	needs: ['todo'],
+  	needs: ['todo', 'application'],
 
   	newComment: '',
 
@@ -29,10 +29,12 @@ export default Ember.Route.extend({
 			if (Ember.isBlank(newComment)) {return false;}
 
 			var todo = this.modelFor(this.routeName);
+			var user = this.get('session.currentUser');
 
 			var comment = this.store.createRecord('comment', {
 				message: newComment,
-				todo: todo
+				todo: todo,
+				user: user,
 			});
 
 			this.controllerFor(this.routeName).set('newComment', '');
@@ -42,6 +44,10 @@ export default Ember.Route.extend({
 			todo.get('comments').addObject(comment);
 
 			todo.save();
+
+			user.get('comments').addObject(comment);
+
+			user.save();
 		}
-	}
+	},
 });

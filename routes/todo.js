@@ -17,6 +17,7 @@ export default Ember.Route.extend({
   actions: {
 		createTodo: function() {
 			var newTodoTitle = this.controllerFor(this.routeName).get('newTodoTitle');
+			var user = this.controllerFor('application').get('model');
 
 			if (Ember.isBlank(newTodoTitle)) {return false;}
 
@@ -24,7 +25,8 @@ export default Ember.Route.extend({
 
 			var todo = this.store.createRecord('todo', {
 				title: newTodoTitle,
-				list: list
+				list: list,
+				user: user,
 			});
 
 			this.controllerFor(this.routeName).set('newTodoTitle', '');
@@ -32,6 +34,8 @@ export default Ember.Route.extend({
 			todo.save().then(function(todo) {
 				list.get('todos').addObject(todo);
 				list.save();
+				user.get('todos').addObject(todo);
+				user.save();
 			});
 		},
 
@@ -65,6 +69,22 @@ export default Ember.Route.extend({
 			else {
 				model.save();
 			}
-		}
+		},
+
+
+
+		countMe: function() {
+
+			var list = this.modelFor(this.routeName);
+
+			var user = this.store.createRecord('user', {
+				list: list
+			});
+
+			user.save().then(function(user) {
+				list.get('users').addObject(user);
+				list.save();
+			});
+		},
 	},
 });
