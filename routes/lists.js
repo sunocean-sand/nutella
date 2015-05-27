@@ -7,34 +7,45 @@ export default Ember.Route.extend({
  
 	actions: {
 		createList: function() {
+		//0 check authentication
+		/*
+			if (session.isAuthenticated(false)) {
+				return this.send('openModal');
+			} else {
+				//continue action
+			}
+		*/
+		//1
 			var newListTitle = this.controllerFor('lists').get('newListTitle');
-			//var user = this.get('session.user.displayName');
-			var userId = this.get('session.user.uid');
-
-			//var user = this.get('session.user');
+			var user = this.controllerFor('application').get('model');
  
 			if (Ember.isBlank(newListTitle)) { return false; }
  
-		//1
+		//2
 			var list = this.store.createRecord('list', {
 				title: newListTitle,
-				user: userId,
+				user: user,
 			});
  
-		//2
+ 			//this.transitionTo('todo');
+		//3
 			this.controllerFor('lists').set('newListTitle', '');
  
 			var _this = this;
-		//3
+
+			//_this.transitionTo('todo');
+		//4
 			list.save().then(function(list) {
-				userId.get('lists').addObject(list);
-				userId.save().then(function(success){
+				user.get('list').addObject(list);
+				user.save().then(function(success){
 				  console.log('success', success)
 				}, function(fail){
 				  console.log('fail', fail)
 				})
 				//_this.transitionTo('lists.show', list); //4
 			});
+		//5
+			//_this.transitionTo('lists.show');
  
 		}
 	}

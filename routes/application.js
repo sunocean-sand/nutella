@@ -10,6 +10,14 @@ var ref = new Firebase("https://nutella.firebaseio.com");
 
 
 export default Ember.Route.extend({
+	model: function(){
+		var user = this.get('session.uid')
+		if (user) {
+			return this.store.find('user', user);
+		} else  {
+			return null;
+		}
+	},
 	actions: {
 
 		login: function() {
@@ -58,7 +66,9 @@ export default Ember.Route.extend({
 	    },
 
 		closeModal: function() {
+			Ember.$('#modal-dialog').removeClass('overlay');
 	      Ember.$('.modal').modal('hide');
+	      //Ember.$('.overlay').remove();
 	      return this.disconnectOutlet({
 	        outlet: 'modal',
 	        parentView: 'application'

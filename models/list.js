@@ -6,5 +6,5 @@ export default DS.Model.extend({
 	title: DS.attr('string'),
 
 	todos: DS.hasMany('todo', {async: true}),
-	username: DS.belongsTo('user', {async: true})
+	user: DS.belongsTo('user', {async: true})
 });
