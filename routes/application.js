@@ -10,7 +10,8 @@ var ref = new Firebase("https://nutella.firebaseio.com");
 
 
 export default Ember.Route.extend({
-	model: function(){
+
+	model: function() {
 		var user = this.get('session.uid')
 		if (user) {
 			return this.store.find('user', user);
@@ -18,6 +19,8 @@ export default Ember.Route.extend({
 			return null;
 		}
 	},
+
+
 	actions: {
 
 		login: function() {

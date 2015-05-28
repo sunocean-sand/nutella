@@ -14,6 +14,7 @@ export default Ember.Route.extend({
 	});
   },
 
+
   actions: {
 		createTodo: function() {
 			var newTodoTitle = this.controllerFor(this.routeName).get('newTodoTitle');
@@ -72,19 +73,30 @@ export default Ember.Route.extend({
 		},
 
 
-
+/*
 		countMe: function() {
 
-			var list = this.modelFor(this.routeName);
+			var user = this.controllerFor('application').get('model');
+//			var todo = this.modelFor(this.routeName);
+			//var todo = this.store.find('todo', params.todo_id);
+			//var todo = this.store.find('todo', id);
+			var todo = this.controllerFor('details').get('model');
 
-			var user = this.store.createRecord('user', {
-				list: list
+			var helper = this.store.createRecord('helper', {
+				user: user,
+				todo: todo,
 			});
 
-			user.save().then(function(user) {
-				list.get('users').addObject(user);
-				list.save();
+			helper.save().then(function(helper) {
+				user.get('helper').addObject(helper);
+				user.save();
+				todo.get('helper').addObject(helper);
+				todo.save();
 			});
+
 		},
+*/
+
+
 	},
 });
