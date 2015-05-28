@@ -25,11 +25,11 @@ export default Ember.Route.extend({
 		createComment: function() {
 
 			var newComment = this.controllerFor(this.routeName).get('newComment');
+			var user = this.controllerFor('application').get('model');
 
 			if (Ember.isBlank(newComment)) {return false;}
 
 			var todo = this.modelFor(this.routeName);
-			var user = this.get('session.currentUser');
 
 			var comment = this.store.createRecord('comment', {
 				message: newComment,
@@ -39,15 +39,13 @@ export default Ember.Route.extend({
 
 			this.controllerFor(this.routeName).set('newComment', '');
 
-			comment.save();
+			comment.save().then(function(comment) {
+				todo.get('comments').addObject(comment);
+				todo.save();
+				user.get('comments').addObject(comment);
+				user.save();
+			});
 
-			todo.get('comments').addObject(comment);
-
-			todo.save();
-
-			user.get('comments').addObject(comment);
-
-			user.save();
 		}
 	},
 });
