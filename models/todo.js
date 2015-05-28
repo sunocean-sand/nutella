@@ -7,5 +7,6 @@ export default DS.Model.extend({
 	list: DS.belongsTo('list', {async: true}),
 	user: DS.belongsTo('user', {async: true}),
 	
-	comments: DS.hasMany('comment', {async: true})
+	comment: DS.hasMany('comment', {async: true}),
+	helper: DS.hasMany('helper', {async: true}),
 });
