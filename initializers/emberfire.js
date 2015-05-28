@@ -17,19 +17,6 @@ function parseAuthData(authData) {
 			parsedData.website = authData.facebook.cachedUserProfile.link;
 			return parsedData;
 /*
-		case 'github':
-			parsedData.provider = authData.provider;
-			parsedData.id = authData.github.id;
-			parsedData.username = authData.github.username;
-			parsedData.displayName = authData.github.displayName;
-			parsedData.description = authData.github.cachedUserProfile.bio;
-			parsedData.email = authData.github.email;
-			parsedData.company = authData.github.cachedUserProfile.company;
-			parsedData.location = authData.github.cachedUserProfile.location;
-			parsedData.imageThumbUrl = authData.github.cachedUserProfile.avatar_url;
-			parsedData.website = authData.github.cachedUserProfile.html_url;
-			return parsedData;
-
 		case 'google':
 			parsedData.provider = authData.provider;
 			parsedData.id = authData.google.id;
@@ -70,6 +57,14 @@ var session = Ember.Object.extend({
 				session.set('uid', authData.uid);
 				session.set('user', user);
 				ref.child('users').child(authData.uid).set(user);
+				
+				/*
+				var user = this.store.createRecord('user', {
+					id: authData.uid,
+					name: authData.provider.displayName,
+				});
+				user.save();
+				*/
 
 			} else {
 				session.set("isAuthenticated", false);
