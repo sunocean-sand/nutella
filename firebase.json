@@ -1,0 +1,18 @@
+{
+  "firebase": "nutella",
+  "public": "dist",
+
+  "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+  ],
+
+  "headers": [{
+    "source" : "**/*.@(jpg|jpeg|gif|png|css|js|ico)",
+    "headers" : [{
+      "key" : "Cache-Control",
+      "value" : "public,max-age=604800,s-maxage=604800"
+    }]
+  }]
+}
