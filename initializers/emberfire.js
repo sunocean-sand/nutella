@@ -114,7 +114,7 @@ var session = Ember.Object.extend({
 	},
 
 
-
+/*
 	createUser: function() {
         var session = this;
 
@@ -122,7 +122,7 @@ var session = Ember.Object.extend({
         	name: this.get('name'),
         	email: this.get('email'),
         	password: this.get('password')
-        }
+        };
 
         this.get('ref').createUser(properties, function(error, user) {
             if (!error) {
@@ -132,9 +132,9 @@ var session = Ember.Object.extend({
 
                 session.login('password', email, password);
             }
-        }
-    )},
-
+        });
+    },
+*/
 
 
 /*

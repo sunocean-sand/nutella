@@ -1,7 +1,7 @@
 <div class="navbar-wrapper">
   <div class="container-fluid">
     <nav class="navbar navbar navbar-static-top">
-
+ 
       <a class="navbar-brand" href="#">
         <span><img alt="Brand" style="max-width:50px" src="assets/images/logo.png"></span>
         handstack
@@ -9,6 +9,7 @@
      
       <ul class="nav navbar-nav navbar-left">
 
+ 
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
@@ -33,9 +34,9 @@
 
 
 
-
-{{outlet "modal"}}
-
-
+{{liquid-outlet "modal"}}
+{{!outlet "modal"}}
 
 {{outlet}}
+
+{{!liquid-outlet name="main"}}

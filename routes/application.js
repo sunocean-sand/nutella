@@ -1,18 +1,17 @@
-
 import Ember from 'ember';
 import Firebase from 'firebase';
 import { moment, ago } from 'ember-moment/computed';
 
 
 
-var ref = new Firebase("https://nutella.firebaseio.com");
+//var ref = new Firebase("https://nutella.firebaseio.com");
 
 
-
+ 
 export default Ember.Route.extend({
 
 	model: function() {
-		var user = this.get('session.uid')
+		var user = this.get('session.uid');
 		if (user) {
 			return this.store.find('user', user);
 		} else  {
@@ -78,5 +77,14 @@ export default Ember.Route.extend({
 	      });
 	    },
 
+
+//ember-cli-cordova
+	    back: function() {
+      		history.back();
+    	},
+
+	    openLink: function(url) {
+	      window.open(url, '_system');
+	    },
 	}
 });

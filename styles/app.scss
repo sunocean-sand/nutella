@@ -197,3 +197,23 @@ top: 40px;
 .url{
   color: #FF3399;
 }
+
+
+
+
+
+
+/* CORDOVA
+--------------------------------------*/
+
+* {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  input, textarea {
+    -webkit-touch-callout: auto;
+    -webkit-user-select: auto;
+  }
+  }
