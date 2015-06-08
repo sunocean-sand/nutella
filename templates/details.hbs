@@ -9,14 +9,20 @@
 
 			<p>task details</p>
 
+
+			{{!helper count}}
 			<p>
 			<span class="badge">14 hands</span>
 			</p>
 
-			<p><img src={{session.user.imageThumbUrl}} height="50" width="50" class="img-circle"></p>
+
+			{{!helpers image}}
+			<p><img src={{model.helper.user.imageThumbUrl}} height="50" width="50" class="img-circle"></p>
+
 
 			{{!count me in button}}
-			<button class="btn-pink">count me in</button>
+			<button class="btn-pink" {{action "countMe"}}>count me in</button>
+			
 
 		</div>
 
