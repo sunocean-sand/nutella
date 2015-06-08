@@ -1,0 +1,33 @@
+{{!details.hbs}}
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<div class="container-fluid">
+
+		<div class="row center-block text-center">
+
+			<h4>{{model.title}}</h4>
+			<small>created by {{model.user.displayName}}</small>
+
+			<p>task details</p>
+
+
+			{{!helper count}}
+			<p>
+			<span class="badge">14 hands</span>
+			</p>
+
+
+			{{!helpers image}}
+			<p><img src={{model.helper.user.imageThumbUrl}} height="50" width="50" class="img-circle"></p>
+
+
+			{{!count me in button}}
+			<button class="btn-pink" {{action "countMe"}}>count me in</button>
+			
+
+		</div>
+
+		<div class="col-sm-6 col-sm-offset-3">
+			{{outlet "comments"}}
+		</div>
+
+	</div>

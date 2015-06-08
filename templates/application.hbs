@@ -1,0 +1,42 @@
+<div class="navbar-wrapper">
+  <div class="container-fluid">
+    <nav class="navbar navbar navbar-static-top">
+ 
+      <a class="navbar-brand" href="#">
+        <span><img alt="Brand" style="max-width:50px" src="assets/images/logo.png"></span>
+        handstack
+      </a>
+     
+      <ul class="nav navbar-nav navbar-left">
+
+ 
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li><a {{action 'openModal' 'modal'}}>{{fa-icon "user"}}</a></li>
+
+        {{#if session.isAuthenticated}}
+
+        
+          <li><a>{{session.user.displayName}}</a>
+          <span><img src={{session.user.imageThumbUrl}} height="40" width="40" class="img-circle"></span>
+          </li>
+        
+
+          <li {{action 'logout'}}><a>logout</a></li>
+
+        {{/if}}
+      </ul>
+    
+    </nav>
+  </div>
+</div>
+
+
+
+{{liquid-outlet "modal"}}
+{{!outlet "modal"}}
+
+{{outlet}}
+
+{{!liquid-outlet name="main"}}

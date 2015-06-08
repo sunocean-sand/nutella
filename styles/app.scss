@@ -1,0 +1,219 @@
+@import "settings";
+
+@import "foundation";
+
+ul {
+	margin-left: 0px;
+}
+
+li {
+	list-style: none;
+}
+
+.navbar {
+   background-color: transparent;
+   background: transparent;
+   border-color: transparent;
+}
+
+.navbar .nav > li > a {
+  color:  #fff;
+}
+.navbar .nav > li > a:hover {
+  color:  #FF3399;
+}
+.navbar-brand {
+  color: #fff;
+}
+.navbar-brand:hover {
+  color: #FF3399;
+}
+
+.navbar li { color: #000 }
+
+#application .navbar-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+
+.overlaytext { 
+  color:#fff;
+  position:absolute;
+  z-index:12;
+  top:30%;
+  left:0;
+  width:100%;
+  text-align:center;
+}
+
+.overlaytext > h1 { 
+  color:#fff;
+}
+
+
+
+
+/* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+
+/* Carousel base class */
+.carousel {
+  margin-bottom: 60px;
+}
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+  z-index: 1;
+}
+
+/* Declare heights because of positioning of img element */
+.carousel .item {
+  height: 500px;
+}
+
+.carousel img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-height: 400px;
+}
+
+
+
+
+
+
+.modal {
+  position: relative;
+  margin: 10px auto;
+  width: 400px;
+  background-color: #fff;
+  padding: 1em;
+}
+
+.modal-header {
+   border-bottom:0px;
+}
+
+.overlay {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.flush--top {
+  margin-top: 0;  
+}
+
+.nav-tabs > li, .nav-pills > li {
+    float:none;
+    display:inline-block;
+    *display:inline; /* ie7 fix */
+     zoom:1; /* hasLayout ie7 trigger */
+}
+
+.nav-tabs {
+    text-align:center;
+}
+
+input{
+   text-align:center;
+}
+
+
+.btn-pink {
+  background-color: #FF3399;
+  border-color: #FF3399;
+}
+.btn-pink:hover {
+  background-color: #3bf7c8;
+  border-color: #3bf7c8;
+}
+.btn-pink:focus,
+.btn-pink:active,
+.btn-pink.active {
+  background-color: #ff1a8c;
+  border-color: #ff0080;
+}
+.btn-pink.disabled:hover,
+.btn-pink.disabled:focus,
+.btn-pink.disabled:active,
+.btn-pink.disabled.active,
+.btn-pink[disabled]:hover,
+.btn-pink[disabled]:focus,
+.btn-pink[disabled]:active,
+.btn-pink[disabled].active,
+fieldset[disabled] .btn-pink:hover,
+fieldset[disabled] .btn-pink:focus,
+fieldset[disabled] .btn-pink:active,
+fieldset[disabled] .btn-pink.active {
+  background-color: #FF3399;
+  border-color: #FF3399;
+}
+
+
+
+/*
+.bubble 
+{
+position: relative;
+width: 750px;
+height: auto;
+padding: 0px;
+margin-top: 20px;
+background: #b3b3b3;
+text-align: center;
+-webkit-border-radius: 0px;
+-moz-border-radius: 0px;
+border-radius: 0px;
+}
+
+.bubble:after 
+{
+content: '';
+position: absolute;
+border-style: solid;
+border-width: 15px 15px 15px 0;
+border-color: transparent #b3b3b3;
+display: block;
+width: 0;
+z-index: 1;
+left: -15px;
+top: 40px;
+}
+*/
+
+.commenterImage {
+    margin-right:5px;
+    height:100%;
+    float:left;
+}
+
+.url{
+  color: #FF3399;
+}
+
+
+
+
+
+
+/* CORDOVA
+--------------------------------------*/
+
+* {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  input, textarea {
+    -webkit-touch-callout: auto;
+    -webkit-user-select: auto;
+  }
+  }

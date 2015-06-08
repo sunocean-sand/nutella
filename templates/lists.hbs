@@ -1,0 +1,79 @@
+
+<!-- Carousel
+================================================== -->
+<div class="overlaytext">
+	<h1><strong>BUILD COMMUNITY</strong></h1>
+
+		<p class="lead">what do you want to make happen today?</p>
+
+		<div class="col-xs-4 col-xs-offset-4">
+			<div class="input-group input-group-lg center-block">
+			{{input class="form-control" type="text" value=newListTitle action="createList" placeholder="Create a Stack"}}
+			</div>
+		</div>
+</div>
+
+
+<div id="myCarousel" class="carousel slide">
+    <!-- Indicators -->
+    <div class="carousel-inner">
+      <div class="item active">
+        <img src="/assets/images/candles.jpg" class="img-responsive">
+          <div class="container">
+            <div class="carousel-caption"></div>
+          </div>
+    </div>
+   
+    </div>
+</div>
+<!-- /.carousel -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<div class="container-fluid">
+
+		<div class="row">
+			<div class="col-xs-12 text-center">
+
+				<h4>Discover stacks in the works</h4>
+
+				<br><br>
+
+			</div>
+		</div>
+
+
+
+
+		<div class="row">
+        {{#each list in model}}
+        <div class="col-lg-4 col-sm-4 col-xs-12">
+            
+            {{#link-to "todo" list}}
+            <div class="panel panel-default">
+              <div class="panel-body">
+                  
+                  <h3>{{list.title}}</h3>
+                  <p>{{list.user.displayName}}</p>
+
+                  {{!number of hands}}
+                  	<br>
+					<p>
+					<span class="badge pull-left">14 hands</span>
+					</p>
+                  
+              </div>
+            </div>
+            {{/link-to}}
+
+        </div>
+        {{/each}}
+      </div>
+
+
+
+
+	</div>
+
+	<!--div class="small-6 columns">
+		{{outlet}}
+	</div-->

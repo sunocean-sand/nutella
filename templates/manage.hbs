@@ -1,0 +1,26 @@
+{{outlet}}
+
+<div class="row center-block text-center">
+
+	{{!stack title}}
+		<h4>{{title}}</h4>
+		<small>created by {{model.user.displayName}}</small>
+
+	{{#each task in model.tasks}}
+		<table class="table table-hover">
+		{{!task title}}
+				<th><p>task details</p></th>
+
+		{{!helpers by tasks}}
+				<tr>
+				{{!name}}
+				<td><p>name<img src={{model.helper.user.imageThumbUrl}} height="50" width="50" class="img-circle"></p></td>
+				{{!email}}
+
+				{{!phone number}}
+
+				</tr>
+		</table>
+	{{/each}}
+
+</div>

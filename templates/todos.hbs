@@ -1,0 +1,58 @@
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<div class="container-fluid">
+
+
+
+<div class="row">
+		{{input type="text" value=newTodoTitle action="createTodo" placeholder="Enter a todo"}}
+</div>
+
+
+
+
+<div class="row">
+	{{!div class="col-xs-12 col-xs-offset-5"}}
+	{{!task list}}
+		<ul class="list-group">
+			{{#each todo in model.todos itemController="todo"}}
+
+				{{#link-to "details" todo}}
+
+				<li class="list-group-item">
+
+					{{!task}}
+
+					{{input type ="checkbox" checked=todo.isCompleted}}
+					{{#if todo.isEditing}}
+						{{edit-title type="text" value=todo.model.title focus-out="updateTitle" insert-newline="updateTitle"}}
+					{{else}}
+						{{todo.model.title}}
+						<a href="#" {{action "editTitle"}}>{{fa-icon "pencil"}}</a>
+						<a href="#" {{action "deleteTodo" todo.model.id}}>{{fa-icon "remove"}}</a>
+					{{/if}}
+
+					{{!count me in button}}
+					<button class="btn-pink pull-right">count me in</button>
+
+					{{!number of hands}}
+					<p>
+					<span class="badge pull-left">14 hands</span>
+					</p>
+
+					
+						{{!speech bubble}}
+						{{!outlet "comments"}}
+
+				</li>
+
+				{{/link-to}}
+
+			{{/each}}
+		</ul>
+	{{!/div}}
+</div>
+
+
+
+
+</div>
