@@ -11,4 +11,5 @@ export default Router.map(function() {
   });
   this.route('todo', {path: 'todos/:todo_id'});
   this.route('details', {path: 'todos/:todo_id/details'});
+  this.route('manage', {path: 'todos/:todo_id/manage'});
 });
